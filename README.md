@@ -1,21 +1,13 @@
 # Mostaque Tahamid
 
-A personal portfolio for Mostaque Tahamid, a University of Houston business student with experience across energy, technology, business development, and operations.
+Personal portfolio: https://mostaquetahamid.github.io/
 
-Live site: https://mostaquetahamid.github.io/
+A visual introduction to Mostaque, his experience, and life beyond the office. Built with plain HTML, CSS, and JavaScript and published through GitHub Pages.
 
-## Contents
+The main page uses concise highlights, responsive personal photographs, and optional short stories. The full career overview is available through “See the full journey.”
 
-The website uses plain HTML, CSS, and JavaScript. No dependency installation or build is needed.
+Motion includes entrance animations, scroll reveals, subtle photo depth, counters, and a manual landscape crossfade. System reduced motion preferences are respected, and visitors can pause motion. Scrolling stays native.
 
-The site includes selected project stories, the MacroMap live prototype, professional experience, leadership, volunteering, education, skills, and a downloadable resume.
+Edit index.html for the main page, styles.css for presentation, and script.js for short stories and interactions. The photos are optimized copies of user supplied images. The public resume excludes the original phone number and citizenship field.
 
-## Updating the site
-
-Edit `index.html` for page content, `styles.css` for design, and `script.js` for project case studies and interactions. Replace `assets/Mostaque-Tahamid-Public-Resume.pdf` to update the downloadable resume.
-
-GitHub Pages serves the files on the `main` branch from the repository root. The published repository contains the website files at its root.
-
-The portfolio is built from the October 2026 resume and additional experience previously provided by Mostaque. The resume supplies the current education and major. MacroMap is identified as a class prototype built with AI assistance. Project artwork is illustrative; no internal employer data or screenshots are included.
-
-The downloadable public resume excludes the original phone number and citizenship field.
+MacroMap is an interactive class prototype built with AI assistance. Its restaurant information is sample data.
