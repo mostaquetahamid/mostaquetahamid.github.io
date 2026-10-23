@@ -102,9 +102,7 @@ function updateScrollMotion() {
   }
   if (!phoneMode && window.scrollY < height * 1.5) {
     const amount = Math.min(window.scrollY * .065, 45);
-    portraitCards[0].style.setProperty('--portrait-y', (10 - amount) + 'px');
-    portraitCards[1].style.setProperty('--portrait-y', (amount * .25) + 'px');
-    portraitCards[2].style.setProperty('--portrait-y', (10 - amount * .7) + 'px');
+    portraitCards.forEach(function (card) { card.style.setProperty('--portrait-y', (amount * .25) + 'px'); });
   }
   const rect = scenicSection.getBoundingClientRect();
   if (rect.bottom > 0 && rect.top < height) {
@@ -158,40 +156,30 @@ menuButton.addEventListener('click', function () {
 navigation.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', closeMenu); });
 document.addEventListener('keydown', function (event) { if (event.key === 'Escape') closeMenu(); });
 
-const portraitDots = Array.from(document.querySelectorAll('[data-portrait]'));
-function showPortrait(index, instant) {
-  const card = portraitCards[index];
-  const left = card.offsetLeft - portraitRail.offsetLeft - (portraitRail.clientWidth - card.offsetWidth) / 2;
-  portraitRail.scrollTo({ left: left, behavior: instant || paused ? 'instant' : 'smooth' });
-}
-portraitDots.forEach(function (button) { button.addEventListener('click', function () { showPortrait(Number(button.dataset.portrait), false); }); });
-if (phoneMode) showPortrait(1, true);
-let railFrame = null;
-portraitRail.addEventListener('scroll', function () {
-  if (railFrame !== null) return;
-  railFrame = requestAnimationFrame(function () {
-    railFrame = null;
-    const center = portraitRail.scrollLeft + portraitRail.clientWidth / 2;
-    let selected = 0;
-    let distance = Infinity;
-    portraitCards.forEach(function (card, index) {
-      const cardCenter = card.offsetLeft - portraitRail.offsetLeft + card.offsetWidth / 2;
-      const difference = Math.abs(cardCenter - center);
-      if (difference < distance) { distance = difference; selected = index; }
-    });
-    portraitDots.forEach(function (button, index) {
-      button.classList.toggle('active', index === selected);
-      button.setAttribute('aria-pressed', String(index === selected));
-    });
-  });
-}, { passive: true });
 window.addEventListener('resize', function () {
   if (window.innerWidth > 700) closeMenu();
-  const nextPhoneMode = window.innerWidth <= 700;
-  if (nextPhoneMode && !phoneMode) showPortrait(1, true);
-  phoneMode = nextPhoneMode;
+  phoneMode = window.innerWidth <= 700;
   requestMotionFrame();
 }, { passive: true });
+
+const tourSteps = [
+  ['◎', 'Your goals. Your lunch.', 'Start with nutrition goals, a budget, and your Houston area.'],
+  ['⌕', 'Find your next favorite.', 'Filter meal options and compare what fits your day.'],
+  ['♡', 'Keep the good finds.', 'Save favorites so they’re easy to find next time.']
+];
+const tourButtons = Array.from(document.querySelectorAll('[data-tour]'));
+const tourPanel = document.querySelector('#tour-panel');
+tourButtons.forEach(function (button) {
+  button.addEventListener('click', function () {
+    const index = Number(button.dataset.tour);
+    tourButtons.forEach(function (item) { item.setAttribute('aria-pressed', String(item === button)); });
+    tourPanel.querySelector('.tour-symbol').textContent = tourSteps[index][0];
+    document.querySelector('#tour-title').textContent = tourSteps[index][1];
+    document.querySelector('#tour-description').textContent = tourSteps[index][2];
+    tourPanel.dataset.step = String(index);
+    if (!paused && typeof tourPanel.animate === 'function') tourPanel.animate([{ opacity: .3, transform: 'translateY(8px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 350, easing: 'ease-out' });
+  });
+});
 
 let scene = 0;
 const sceneImages = Array.from(document.querySelectorAll('[data-landscape]'));
