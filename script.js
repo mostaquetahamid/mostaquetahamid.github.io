@@ -13,6 +13,9 @@ const stories = {
   },
   bp: {
     category: 'BP / PROCUREMENT / SUMMER 2026',
+    image: 'assets/bp-portrait-1600.webp',
+    alt: 'Mostaque standing beside the bp logo',
+    imageClass: 'bp-story',
     title: 'Look closer. Find a better way.',
     summary: 'I connected contract details, logistics data, and supplier conversations to uncover value and improve performance.',
     detail: 'From recovering medevac costs to making trucking performance more visible, my focus was making the analysis useful to the people making decisions.',
