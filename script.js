@@ -202,10 +202,11 @@ function showScene(index) {
   scene = index;
   sceneImages.forEach(function (image, position) { image.classList.toggle('active', position === scene); image.setAttribute('aria-hidden', String(position !== scene)); });
   sceneButtons.forEach(function (button, position) { button.classList.toggle('active', position === scene); button.setAttribute('aria-pressed', String(position === scene)); });
-  document.querySelector('#scenic-count').textContent = scene === 0 ? '01 / 02' : '02 / 02';
+  document.querySelector('#scenic-count').textContent = String(scene + 1).padStart(2, '0') + ' / ' + String(sceneImages.length).padStart(2, '0');
 }
 sceneButtons.forEach(function (button) { button.addEventListener('click', function () { showScene(Number(button.dataset.scene)); }); });
 document.querySelector('.scene-next').addEventListener('click', function () { showScene((scene + 1) % sceneImages.length); });
+document.querySelector('.scene-prev').addEventListener('click', function () { showScene((scene - 1 + sceneImages.length) % sceneImages.length); });
 
 if ('IntersectionObserver' in window) {
   const counterObserver = new IntersectionObserver(function (entries) {
