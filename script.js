@@ -2,48 +2,52 @@
 
 const stories = {
   nasa: {
+    image: 'assets/logo-nasa.svg',
+    alt: 'NASA logo',
+    imageClass: 'logo-story',
     category: 'NASA JOHNSON SPACE CENTER / 2026',
-    title: 'Help good knowledge travel.',
+    title: 'Improve how teams access and use information.',
     summary: 'I helped make information easier to find, share, and put to work at NASA.',
     detail: 'My IT internship brought together knowledge management, software request tracking, and AI compliance tools. I learned that a useful system starts with understanding the people who rely on it.',
-    image: 'assets/portrait-nasa-1600.webp',
-    alt: 'Mostaque at NASA Johnson Space Center',
     stats: [['3,000+', 'Knowledge hub views'], ['90%', 'Faster software request delivery'], ['55%', 'Growth in tool adoption']],
     note: 'Separate outcomes across three initiatives during my January to May 2026 internship.'
   },
   bp: {
+    image: 'assets/logo-bp.svg',
+    alt: 'bp logo',
+    imageClass: 'logo-story',
     category: 'BP / PROCUREMENT / SUMMER 2026',
-    image: 'assets/bp-portrait-1600.webp',
-    alt: 'Mostaque standing beside the bp logo',
-    imageClass: 'bp-story',
-    title: 'Look closer. Find a better way.',
+    title: 'Turn analysis into cost savings.',
     summary: 'I connected contract details, logistics data, and supplier conversations to uncover value and improve performance.',
     detail: 'From recovering medevac costs to making trucking performance more visible, my focus was making the analysis useful to the people making decisions.',
     stats: [['$213K+', 'Medevac costs recovered'], ['$142K', 'Annual logistics savings'], ['41,517', 'Trucking loads analyzed']],
     note: 'Procurement internship at bp · May to August 2026.'
   },
   amazon: {
+    image: 'assets/logo-amazon.svg',
+    alt: 'Amazon logo',
+    imageClass: 'logo-story',
     category: 'AMAZON / AREA MANAGER INTERN / SUMMER 2025',
-    title: 'Good operations start with people.',
+    title: 'Lead people. Strengthen operations.',
     summary: 'At Amazon’s GYR2 site, I learned to lead on the floor, listen to the team, and improve how work moves.',
     detail: 'I worked with 60+ associates on workflow, safety, and equipment integration. The experience taught me how small changes can make a meaningful difference at scale.',
-    image: 'assets/amazon-gyr2-1600.webp',
-    alt: 'Mostaque at Amazon’s GYR2 site',
-    imageClass: 'amazon-story',
     stats: [['60+', 'Associates led'], ['18%', 'Higher throughput'], ['10%', 'Fewer peak delays']],
     note: 'Area Manager internship in the Phoenix area · May to July 2025.'
   },
   schneider: {
+    image: 'assets/logo-schneider.svg',
+    alt: 'Schneider Electric logo',
+    imageClass: 'logo-story',
     category: 'SCHNEIDER ELECTRIC / BUSINESS DEVELOPMENT / 2026',
-    title: 'Explore what could come next.',
+    title: 'Connect market opportunities with business priorities.',
     summary: 'I’m helping connect emerging technologies with real business opportunities in energy, infrastructure, and AI.',
-    detail: 'My work spans market research, physical AI, engineering simulation, and potential partnerships. I enjoy turning an early idea into a focused conversation about what is possible.',
+    detail: 'My work spans market research, physical AI, engineering simulation, and potential partnerships. My goal is to turn early ideas into clear opportunities for the business.',
     stats: [['23+', 'Companies researched'], ['Energy', 'Utilities & AI data centers'], ['People', 'Partnerships & new possibilities']],
     note: 'Business Development and Innovation internship · Fall 2026.'
   },
   macromap: {
     category: 'PERSONAL PROJECT / ENTREPRENEURSHIP',
-    title: 'An everyday problem. A new possibility.',
+    title: 'Turn a student need into a working prototype.',
     summary: 'MacroMap helps students explore meals that fit their goals, budget, and day.',
     detail: 'I shaped the concept in my entrepreneurship class, then used AI assistance to bring it into a working prototype. You can filter meals, compare options, save favorites, and explore different Houston areas.',
     image: 'assets/macromap-preview.jpg',
@@ -54,7 +58,7 @@ const stories = {
   },
   community: {
     category: 'LEADERSHIP / COMMUNITY',
-    title: 'Make the opportunity bigger than yourself.',
+    title: 'Build a community that creates opportunity.',
     summary: 'I helped build Cougar Product at UH, a place for students to connect around technology, design, and business.',
     detail: 'As Co Founder and Vice President, I’ve mentored students, helped bring industry partners into the community, and supported the organization’s finances. Giving back also includes fundraising for Star of Hope, volunteering at Houston Food Bank and a local homeless shelter, and leading inclusive cultural events with Kerr Desi Club.',
     stats: [['500+', 'Cougar Product members'], ['$3,000+', 'Raised for Star of Hope'], ['MLT', 'Career Prep Fellow']],
@@ -63,7 +67,7 @@ const stories = {
 };
 
 const career = [
-  ['Schneider Electric', 'Business Development & Innovation Intern', 'Fall 2026', 'Exploring growth opportunities across energy, AI, and emerging technology.'],
+  ['Schneider Electric', 'Business Development & Innovation Intern', 'Fall 2026', 'Researching growth opportunities across energy, AI, and emerging technology.'],
   ['bp', 'Procurement Intern', 'Summer 2026', 'Using data and supplier relationships to recover value and improve logistics.'],
   ['NASA Johnson Space Center', 'IT Intern · Knowledge Management', 'Spring 2026', 'Building tools that help people find information and work more effectively.'],
   ['SEKCO', 'Business Development Intern', '2025 to 2026', 'Supporting business growth through driver onboarding, retention, and operational improvements.'],
@@ -226,7 +230,7 @@ function makeElement(tag, content, className) {
   return element;
 }
 function openStory(key, trigger) {
-  const story = key === 'journey' ? { category: 'THE JOURNEY SO FAR', title: 'Always something to learn.', summary: 'A few chapters across business, technology, operations, and people.' } : stories[key];
+  const story = key === 'journey' ? { category: 'PROFESSIONAL EXPERIENCE', title: 'A foundation built through action.', summary: 'Experience in business development, procurement, technology, operations, and customer relationships.' } : stories[key];
   if (!story) return;
   const container = document.querySelector('#story-content');
   container.replaceChildren();
