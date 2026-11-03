@@ -56,11 +56,18 @@ const stories = {
     link: ['Try MacroMap', 'https://mostaquetahamid.github.io/macromap/'],
     note: 'An interactive class prototype built with AI assistance. Restaurant details, nutrition, prices, and distances are fictional sample data.'
   },
+  kerr: {
+    category: 'KERR HIGH SCHOOL / FOUNDER & PRESIDENT',
+    title: 'Create a community. Bring people together.',
+    summary: 'I founded Kerr Desi Club at Kerr High School, creating a space for students to connect through South Asian culture.',
+    detail: 'As President, I helped organize cultural events and fundraising efforts that brought students together. Starting the club gave me early experience turning an idea into an organization, coordinating people, and leading with a shared purpose.',
+    note: 'Kerr High School · Class of 2023.'
+  },
   community: {
     category: 'LEADERSHIP / COMMUNITY',
     title: 'Build a community that creates opportunity.',
     summary: 'I helped build Cougar Product at UH, a place for students to connect around technology, design, and business.',
-    detail: 'As Co Founder and Vice President, I’ve mentored students, helped bring industry partners into the community, and supported the organization’s finances. Giving back also includes fundraising for Star of Hope, volunteering at Houston Food Bank and a local homeless shelter, and leading inclusive cultural events with Kerr Desi Club.',
+    detail: 'As Co Founder and Vice President, I’ve mentored students, helped bring industry partners into the community, and supported the organization’s finances. Giving back also includes fundraising for Star of Hope, volunteering at Houston Food Bank and a local homeless shelter, and founding Kerr Desi Club at Kerr High School, where I served as President and organized cultural events and fundraising.',
     stats: [['500+', 'Cougar Product members'], ['$3,000+', 'Raised for Star of Hope'], ['MLT', 'Career Prep Fellow']],
     note: 'Also involved with ABSA and MISSO at UH. Earlier leadership includes Kerr Fitness Club, Student Council, and Varsity Chorale.'
   }
